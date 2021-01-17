@@ -1,0 +1,488 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>布隆过滤器 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="发布订阅.html" />
+    
+    
+    <link rel="prev" href="HyperLogLog.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Redis.html">
+            
+                <a href="Redis.html">
+            
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="数据类型.html">
+            
+                <a href="数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="命令.html">
+            
+                <a href="命令.html">
+            
+                    
+                    命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="服务器配置.html">
+            
+                <a href="服务器配置.html">
+            
+                    
+                    服务器配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="缓存.html">
+            
+                <a href="缓存.html">
+            
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="持久化数据.html">
+            
+                <a href="持久化数据.html">
+            
+                    
+                    持久化数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Redis事务.html">
+            
+                <a href="Redis事务.html">
+            
+                    
+                    Redis事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="分布式锁.html">
+            
+                <a href="分布式锁.html">
+            
+                    
+                    分布式锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="HyperLogLog.html">
+            
+                <a href="HyperLogLog.html">
+            
+                    
+                    HyperLogLog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="布隆过滤器.html">
+            
+                <a href="布隆过滤器.html">
+            
+                    
+                    布隆过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="发布订阅.html">
+            
+                <a href="发布订阅.html">
+            
+                    
+                    发布订阅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="跳跃表.html">
+            
+                <a href="跳跃表.html">
+            
+                    
+                    跳跃表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Redis客户端.html">
+            
+                <a href="Redis客户端.html">
+            
+                    
+                    Redis客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="服务高可用.html">
+            
+                <a href="服务高可用.html">
+            
+                    
+                    服务高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="Redis 运维.html">
+            
+                <a href="Redis 运维.html">
+            
+                    
+                    Redis 运维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="READ-ME.html">
+            
+                <a href="READ-ME.html">
+            
+                    
+                    READ-ME
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >布隆过滤器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;">&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;</h1>
+<p>&#x200B;    &#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#xFF08;Bloom Filter&#xFF09;&#x662F;1970&#x5E74;&#x5E03;&#x9686;&#x63D0;&#x51FA;&#x6765;&#x7684;&#x3002;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x957F;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x5411;&#x91CF;&#x548C;&#x4E00;&#x7CFB;&#x5217;&#x968F;&#x673A;&#x6620;&#x5C04;&#x51FD;&#x6570;&#xFF08;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#xFF09;&#x3002;</p>
+<p>&#x200B;    &#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x7528;&#x4E8E;&#x68C0;&#x7D22;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x5426;&#x5728;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x4E2D;&#x3002;&#x5B83;&#x7684;&#x4F18;&#x70B9;&#x662F;&#x7A7A;&#x95F4;&#x548C;&#x65F6;&#x95F4;&#x6548;&#x7387;&#x90FD;&#x6BD4;&#x4E00;&#x822C;&#x7684;&#x7B97;&#x6CD5;&#x8981;&#x597D;&#x7684;&#x591A;&#xFF0C;&#x7F3A;&#x70B9;&#x662F;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x8BEF;&#x8BC6;&#x522B;&#x7387;&#x548C;&#x5220;&#x9664;&#x56F0;&#x96BE;&#x3002;</p>
+<h2 id="&#x539F;&#x7406;">&#x539F;&#x7406;</h2>
+<h2 id="&#x5E94;&#x7528;&#x573A;&#x666F;">&#x5E94;&#x7528;&#x573A;&#x666F;</h2>
+<ul>
+<li>&#x5927;&#x6570;&#x636E;&#x4E2D;&#x5224;&#x65AD;&#x67D0;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x5426;&#x5B58;&#x5728;</li>
+<li>&#x89E3;&#x51B3;&#x7F13;&#x5B58;&#x7A7F;&#x900F;</li>
+<li>&#x722C;&#x866B;&#x3001;&#x90AE;&#x7BB1;&#x7CFB;&#x7EDF;&#x7684;&#x8FC7;&#x6EE4;</li>
+</ul>
+<p>&#x5E73;&#x65F6;&#x6709;&#x6CA1;&#x6709;&#x6CE8;&#x610F;&#x5230;&#x4E00;&#x4E9B;&#x6B63;&#x5E38;&#x7684;&#x90AE;&#x4EF6;&#x4E5F;&#x4F1A;&#x88AB;&#x653E;&#x8FDB;&#x5783;&#x573E;&#x90AE;&#x4EF6;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x8BEF;&#x5224;&#x5BFC;&#x81F4;&#x7684;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h2>
+<h3 id="redis-&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;">Redis &#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;</h3>
+<p>Redis4.0&#x4EE5;&#x63D2;&#x4EF6;&#x7684;&#x5F62;&#x5F0F;&#x63D0;&#x4F9B;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x529F;&#x80FD;&#xFF0C;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#x52A0;&#x8F7D;&#x5230;Redis Server&#x4E2D;&#x3002;</p>
+<p>BloomFilter &#x6709;&#x4E24;&#x4E2A;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#xFF0C;&#x5373; <code>bf.add</code> &#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x548C; <code>bf.exists</code> &#x67E5;&#x8BE2;&#x5143;&#x7D20;&#x3002;</p>
+<pre><code>
+
+</code></pre><p>&#x200B;    &#x5982;&#x679C;&#x4F7F;&#x7528; BloomFilter &#x4E4B;&#x524D;&#x4E0D;&#x6307;&#x5B9A;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x90A3;&#x4E48;&#x4F1A;&#x4F7F;&#x7528;Redis&#x9ED8;&#x8BA4;&#x7684;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;Redis &#x4E5F;&#x63D0;&#x4F9B;&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x7684;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x3002;</p>
+<p>&#x53EA;&#x9700;&#x8981;&#x5728; bf.add &#x4E4B;&#x524D;&#x4F7F;&#x7528; bf.reserve &#x6307;&#x4EE4;&#x663E;&#x793A;&#x7684;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;;</p>
+<p>bf.reserve &#x6709;&#x4E09;&#x4E2A;&#x53C2;&#x6570;: key , error_rate , initial_size;</p>
+<ul>
+<li>error_rate &#x9519;&#x8BEF;&#x7387;&#x8D8A;&#x4F4E;,&#x9700;&#x8981;&#x7684;&#x7A7A;&#x95F4;&#x8D8A;&#x5927;. &#x5BF9;&#x4E8E;&#x4E0D;&#x9700;&#x8981;&#x8FC7;&#x4E8E;&#x7CBE;&#x786E;&#x7684;&#x573A;&#x5408;,&#x8BBE;&#x7F6E;&#x7A0D;&#x5927;&#x4E00;&#x4E9B;&#x4E5F;&#x6CA1;&#x6709;&#x5173;&#x7CFB;</li>
+<li>initial_size &#x8868;&#x793A;&#x521D;&#x59CB;&#x5316;&#x5927;&#x5C0F;, &#x5F53;&#x5B9E;&#x9645;&#x6570;&#x91CF;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x503C;&#x65F6;, &#x9519;&#x8BEF;&#x7387;&#x5C31;&#x4F1A;&#x4E0A;&#x5347;.</li>
+</ul>
+<p>&#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;, &#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E; error_rate= 0.01 ,initial_size =100 ;</p>
+<p>&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x652F;&#x6301; add &#x548C; isExist &#x64CD;&#x4F5C;&#xFF0C;&#x4E0D;&#x652F;&#x6301; delete &#x64CD;&#x4F5C;</p>
+<h3 id="guava-&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;">Guava &#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;</h3>
+<p>Google&#x7684;&#x6838;&#x5FC3;&#x7C7B;&#x5E93;Guava&#x4E5F;&#x5B9E;&#x73B0;&#x4E86;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;BloomFilter&#x3002;</p>
+<pre><code class="lang-xml"><span class="hljs-comment">&lt;!-- Maven&#x5F15;&#x5165;&#x4F9D;&#x8D56; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.google.guava<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>guava<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>28.0-jre<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;:</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">filter</span><span class="hljs-params">()</span></span>{
+
+   BloomFilter&lt;Integer&gt; integerBloomFilter = 
+       BloomFilter.create(Funnels.integerFunnel(), <span class="hljs-number">100000</span>, <span class="hljs-number">0.01</span>);
+
+   integerBloomFilter.put(<span class="hljs-number">0</span>);
+   integerBloomFilter.put(<span class="hljs-number">1</span>);
+   integerBloomFilter.put(<span class="hljs-number">2</span>);
+
+   System.out.println(integerBloomFilter.mightContain(<span class="hljs-number">1</span>));
+   System.out.println(integerBloomFilter.mightContain(<span class="hljs-number">3</span>));
+}
+</code></pre>
+<p>&#x200B;    &#x5F53;mightContain() &#x65B9;&#x6CD5;&#x8FD4;&#x56DE; true &#x65F6;&#xFF0C;&#x5219;&#x8BE5;&#x5143;&#x7D20;&#x6709;99%&#x7684;&#x53EF;&#x80FD;&#x6027;&#x5728;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x4E2D;&#xFF1B;</p>
+<p>&#x200B;    &#x5F53;mightContain() &#x65B9;&#x6CD5;&#x8FD4;&#x56DE; false &#x65F6;&#xFF0C;&#x5219;&#x8BE5;&#x5143;&#x7D20;100% &#x4E0D;&#x5728;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x4E2D;&#xFF1B;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="HyperLogLog.html" class="navigation navigation-prev " aria-label="Previous page: HyperLogLog">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="发布订阅.html" class="navigation navigation-next " aria-label="Next page: 发布订阅">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"布隆过滤器","level":"1.11","depth":1,"next":{"title":"发布订阅","level":"1.12","depth":1,"path":"target/发布订阅.md","ref":"./target/发布订阅.md","articles":[]},"previous":{"title":"HyperLogLog","level":"1.10","depth":1,"path":"target/HyperLogLog.md","ref":"./target/HyperLogLog.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"target/布隆过滤器.md","mtime":"2021-01-17T14:37:15.605Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-17T14:37:37.417Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
